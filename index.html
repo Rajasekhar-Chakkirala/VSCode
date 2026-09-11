@@ -6,7 +6,7 @@
     <title>Welcome</title>
     <style>
         body {
-            background-color: red;
+            background-color: greenyellow;
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
@@ -14,10 +14,37 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>welcome to github Actions</h1>
+
+    <h1 id="message">Welcome to GitHub Actions</h1>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="welcomeUser()">Submit</button>
+
+    <script>
+        function welcomeUser() {
+            const name = document.getElementById("name").value;
+
+            document.getElementById("message").textContent =
+                "Welcome " + name + " to GITHUB Actions";
+        }
+    </script>
+
 </body>
 </html>
